@@ -4,7 +4,7 @@ init:
 
 .PHONY: build
 build:
-	GOPROXY=https://goproxy.cn,direct gomobile bind -v -androidapi 23 -ldflags='-s -w' ./
+	GOPROXY=https://goproxy.cn,direct gomobile bind -v -androidapi 23 -ldflags='-s -w  -extldflags=-Wl,-z,max-page-size=16384' ./
 
 .PHONY: install
 install: build
